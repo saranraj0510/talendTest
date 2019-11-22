@@ -155,19 +155,19 @@
       <column comment="" defaultValue="" key="false" length="-1" name="CustomerNo" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;sequence&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;sequence identifier&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;s1\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;start value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;step&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="CustomerFirstName" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="CustomerFirstName" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getFirstName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="CustomerMiddleName" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="CustomerMiddleName" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getFirstName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="CustomerLastName" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="CustomerLastName" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getLastName&quot;,&quot;PARAMETERS&quot;:[],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDataGenerator&quot;}"/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="CustomerDateofBirth" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="CustomerDateofBirth" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getRandomDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;1965-01-01\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2001-12-31\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
       </column>
-      <column comment="" defaultValue="" key="false" length="-1" name="CustomerNationality" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+      <column comment="" key="false" length="-1" name="CustomerNationality" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;createRandomString&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;valueLength&quot;,&quot;PARAMETER_VALUE&quot;:&quot;2 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;DataMasking&quot;}"/>
       </column>
       <column comment="" defaultValue="" key="false" length="-1" name="CutomerPhoneNo" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true">
@@ -218,46 +218,57 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tJavaFlex_1"/>
   </node>
-  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="544" posY="128">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
-    <elementParameter field="RADIO" name="BASIC_MODE" value="true"/>
-    <elementParameter field="RADIO" name="TABLE_PRINT" value="false"/>
-    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
-    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
-    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;|&quot;"/>
-    <elementParameter field="CHECK" name="PRINT_HEADER" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" value="false"/>
-    <elementParameter field="CHECK" name="PRINT_COLNAMES" value="false"/>
-    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" value="false"/>
-    <elementParameter field="TABLE" name="LENGTHS" show="false"/>
-    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+  <node componentName="tFileOutputExcel" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="512" posY="128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputExcel_1"/>
+    <elementParameter field="CHECK" name="VERSION_2007" value="false"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
+    <elementParameter field="FILE" name="FILENAME" value="&quot;D:/workspace/out.xls&quot;"/>
+    <elementParameter field="TEXT" name="SHEETNAME" value="&quot;Sheet1&quot;"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="false"/>
+    <elementParameter field="CHECK" name="APPEND_FILE" value="false"/>
+    <elementParameter field="CHECK" name="APPEND_SHEET" show="false" value="false"/>
+    <elementParameter field="CHECK" name="FIRST_CELL_Y_ABSOLUTE" value="false"/>
+    <elementParameter field="TEXT" name="FIRST_CELL_X" show="false" value="0"/>
+    <elementParameter field="TEXT" name="FIRST_CELL_Y" show="false" value="0"/>
+    <elementParameter field="CHECK" name="KEEP_CELL_FORMATING" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="FONT" value=""/>
+    <elementParameter field="CHECK" name="IS_ALL_AUTO_SZIE" value="false"/>
+    <elementParameter field="TABLE" name="AUTO_SZIE_SETTING"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" show="false" value="100"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" show="false" value="&quot;,&quot;"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" show="false" value="&quot;.&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="RECALCULATE_FORMULA" show="false" value="false"/>
     <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tLogRow_1"/>
+    <metadata connector="FLOW" name="tFileOutputExcel_1"/>
   </node>
   <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tRowGenerator_1" offsetLabelX="0" offsetLabelY="0" source="tRowGenerator_1" target="tJavaFlex_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
+  </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tJavaFlex_1" offsetLabelX="0" offsetLabelY="0" source="tJavaFlex_1" target="tFileOutputExcel_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRowGenerator_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-  <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_71679ede-92f6-4fbe-b702-cac824cb5168"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Apm6RCWaqD0FaHw6bqa2C1dkmugoTFOgg0lxhXGXqPi5+CZ4/QlgJpnrTAjQLT7hKfcKGKiq7YtL
-+kGZV84X+Q==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_e4f88e53-8d7e-4d06-82b6-f21bef963a7b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>j1rmHdxoJ/tib6ggCFQ1FXfkTg6jN2KIxkjq3k/CR4eJWbeY4Bb30yG4i2qAJ2BxvwnL80/9W0VB
-MKb3m4uNJQ==</DigestValue></Reference></SignedInfo><SignatureValue>vXS2hkHbjD6ZVFonRvluM14qM0U1raTMbBispAX8DiA85ND9Y8LLEPTrT88Jhz2dVeK87aASlYpp
-x/eLj8Q5NmJ+hfPC4FWJl3O5UCGEN2HbWNe27EB6paCDsTgZ7MdMS88MhxU08oORLvBj0jjYE12u
-L4FfYsYLuB/EExdCXSBwuPhPjWu+NBFV0dYz2jHfkVSUdAUcXkZmeOlvTkJ/PCY6jXxOXemE/D/k
-OCdaiXsB+SKEHE5TKW2SIMEQF7BuT64tlTIaFy+6ls9Bu+qXj/nyE2gaPhjpDDth+zvOgHaigE/H
-HcFpQZhaAaNMbrToirgmx8ctcIXxh5/MwDooIQ==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ee89aa5f-7534-4d18-83d0-1c2b0ce02269"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>BNDEFexMuF1nrqeWsaWMoDBvxUS9Ih+BDVQzynxr7TwphUQGbzCyOHbibzzPtot2tHbla4m5NNHm
+a2HHuxEzig==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_6f867e80-bc85-454b-8002-ee74ddd9bf41"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>gCkNZ2Ke1PI1R+y+2MBGk+DRJ4v2EiysxhahA8heCvCTpoa3Tc3sY73jeJjO2G+h/BWCCwfXHE8M
+Mrw29abAKw==</DigestValue></Reference></SignedInfo><SignatureValue>IjW8xxyS0r18p/yjBe60Y2X/Y7gC0EskeAqx1r1dQCJFjy6ahUnQiYz6P7wek16PLt34iKwec+5l
+V3f/lzKbKffchl7Xytc+CLR0XhHN7tLDnNNDN9Kekb3OpYQ8O5Xi7vZmyLOmusW+bD17qZiA5lXn
+D1e8GoCMI3UVKeW7BzA/f2uATfGrKCXQgV4nycVaLqEOwZCrr/2XhP2ohajHW9CLicqXPhRUzZHk
+fI59CydHVYK0Ok62eP6bMpRKp28ragb96uX7jOWKThqajBd+TJeMmzJ84JvfTwvOf3bHB4wLvLWe
+LS2YOL4O7saSM3HbdqiTsB6NeEudK4DBb6Uq+g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -281,4 +292,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_e4f88e53-8d7e-4d06-82b6-f21bef963a7b" Target="#_71679ede-92f6-4fbe-b702-cac824cb5168"><Timestamp>2019-11-22 04:36:06</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_6f867e80-bc85-454b-8002-ee74ddd9bf41" Target="#_ee89aa5f-7534-4d18-83d0-1c2b0ce02269"><Timestamp>2019-11-22 04:36:41</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
