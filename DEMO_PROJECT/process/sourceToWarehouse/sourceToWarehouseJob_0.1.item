@@ -125,7 +125,7 @@
       <elementValue elementRef="SCHEMA_COLUMN" value="CustomerDateofBirth"/>
       <elementValue elementRef="ARRAY" value="TalendDate.getRandomDate(&quot;1965-01-01&quot; ,&quot;2001-12-31&quot; )"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CustomerNationality"/>
-      <elementValue elementRef="ARRAY" value="DataOperation.CHAR(1)"/>
+      <elementValue elementRef="ARRAY" value="DataMasking.createRandomString(2 ,&quot;IN&quot; )"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CutomerPhoneNo"/>
       <elementValue elementRef="ARRAY" value="Numeric.random(22222222 ,99999999 )"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CutomerMobileNo"/>
@@ -165,8 +165,8 @@
       <column comment="" key="false" length="-1" name="CustomerDateofBirth" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getRandomDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;1965-01-01\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2001-12-31\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
       </column>
-      <column comment="" defaultValue="IN" key="false" length="-1" name="CustomerNationality" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true">
-        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;CHAR&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;i&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1&quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;DataOperation&quot;}"/>
+      <column comment="" defaultValue="IN" key="false" length="-1" name="CustomerNationality" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;createRandomString&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;valueLength&quot;,&quot;PARAMETER_VALUE&quot;:&quot;2 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;allowedChars&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;IN\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;DataMasking&quot;}"/>
       </column>
       <column comment="" defaultValue="" key="false" length="-1" name="CutomerPhoneNo" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;22222222 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;99999999 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
@@ -266,8 +266,8 @@
       <column comment="" key="false" length="-1" name="CustomerDateofBirth" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;getRandomDate&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;1965-01-01\&quot; &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;2001-12-31\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;TalendDate&quot;}"/>
       </column>
-      <column comment="" defaultValue="IN" key="false" length="-1" name="CustomerNationality" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Character" usefulColumn="true">
-        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;CHAR&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;i&quot;,&quot;PARAMETER_VALUE&quot;:&quot;1&quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;DataOperation&quot;}"/>
+      <column comment="" defaultValue="IN" key="false" length="-1" name="CustomerNationality" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true">
+        <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;createRandomString&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;valueLength&quot;,&quot;PARAMETER_VALUE&quot;:&quot;2 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;allowedChars&quot;,&quot;PARAMETER_VALUE&quot;:&quot;\&quot;IN\&quot; &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;DataMasking&quot;}"/>
       </column>
       <column comment="" defaultValue="" key="false" length="-1" name="CutomerPhoneNo" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true">
         <additionalField key="FUNCTION_INFO" value="{&quot;NAME&quot;:&quot;random&quot;,&quot;PARAMETERS&quot;:[{&quot;PARAMETER_NAME&quot;:&quot;min value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;22222222 &quot;},{&quot;PARAMETER_NAME&quot;:&quot;max value&quot;,&quot;PARAMETER_VALUE&quot;:&quot;99999999 &quot;}],&quot;PARAMETER_CLASS_NAME&quot;:&quot;Numeric&quot;}"/>
@@ -310,13 +310,13 @@
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_29b43311-8452-40c4-904b-4640d39f3aaf"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>rJ3fOD9c0kL4u5ADYiLtCefLU+/TCBS5SmIeD6+eSdWqPwgDPf05KtsEO8FUIBZypdeymqc6X+l4
-udYqDPkkmQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_92489c42-441f-418d-8072-12732a842d5b"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>nC69Ft4/w8VWFAaaEbQLnZ2jhwCTBkKoWdL7qnpxXeB/3GgDzrmyBsSbzQcvhy027uOKR5LiIyyo
-P6FA9N7lhw==</DigestValue></Reference></SignedInfo><SignatureValue>nvwkVRwVExN2dbN5kBRv0IkYpNRr6qYcn0FvkzL+GPkjHzUk3uq6nnuJ8m7x/Kqx41seUIlfsaG8
-jwTci3kYIL51aMSO1jCzfsJn2pAsecjEqfK7dnegbX1LLlafWnQmVVBT0LKcsnuIOi/3HXIlddB+
-ONr6LG4/PTtzavOS/uBOyvxijxg0M0QXCd0CiZCw/irBXI/UMUYwwL1p+L7HoTq7u3KD1bg8nwbQ
-ErUvltmkn5GmPSigLOn+EhrYdHYzgxO3gXmokpzfhsWsAnetT2MHEPI0xIkVA0ZprLPB49spq3my
-PuTgVManqk3hBkrstQGXBxEfVHuZzMm+5sdllA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_5305c27d-2671-4de2-acfd-e72f3efb3df4"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>t9NBdTNSkz0GKWAGcg/ncqQPnS7Ys5uO4/y1VmD1VhV83qIUxqNltOt+roY7mJgV8Qgdpn43n0UK
+6M6TNvdeDA==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_5acf4abe-7bac-4948-86e0-1302db7d7ab3"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>d9AxfA7vzul7mKrijEMgovXRjNeyJqu7v0N4W9pV/w1Ckmyk9jJ0sReJCtGibD81qPZ7OFcIKkOh
+ub1Z2gDcTw==</DigestValue></Reference></SignedInfo><SignatureValue>WNHVopDpQoRqx/VC9pXWFv6bS3iWI/OHNVBrGb3JONESxcR44nxp/FtFiavA2VCLtAdsIl2c/GFT
+MIrGd1Dac1sfh/x0Jws184Z//Leq57qPuTN4RMIFoHw7L60NzFlF5pZY69yNCR6gY98ujdTZ6r4d
+DDejVAbhmzjfKFiscjfOEqqJXxJCse7sDpJ11LUXU/HhsVAhK+2nV/KvDhVegWcl09CI1fsodYxD
+/bj3P4Trn+ZMSb1QGMYMmkjN+OrVXKLidEVNNabq4eaIkNItRk3m6AWePzL20libQkPJzWOAmWqe
+jyP9MEaB/VAROZ28Q7amkE1gYqy+1Oyz51qc3g==</SignatureValue><KeyInfo><X509Data><X509SubjectName>CN=Default code-signing certificate,OU=R&amp;D,O=Talend Inc.,ST=Paris,C=FR</X509SubjectName><X509Certificate>MIIFYzCCA0ugAwIBAgIBATANBgkqhkiG9w0BAQsFADCBjTELMAkGA1UEBhMCRlIxDjAMBgNVBAgM
 BVBhcmlzMQ4wDAYDVQQHDAVQYXJpczEUMBIGA1UECgwLVGFsZW5kIEluYy4xDDAKBgNVBAsMA1Im
 RDEWMBQGA1UEAwwNVGFsZW5kIFImRCBDQTEiMCAGCSqGSIb3DQEJARYTc2VjdXJpdHlAdGFsZW5k
 LmNvbTAeFw0xODAxMTgwMDA2MTJaFw0yMTAxMTcwMDA2MTJaMGwxCzAJBgNVBAYTAkZSMQ4wDAYD
@@ -340,4 +340,4 @@ r3/fbKJ02Ni9kCnkY8wQS1yn45UNl1woSjryza4f4uLKGkrrIsUPXK+Vy4A1Il8XgFfmrtgA8m9s
 EHyu0OyAJH/agWN+GLhF/ssp26oXhiYqTkG4sQtNRFQG0isaYf/JWSt3f8Q+7/pnZpz4mfEAFimI
 BBLzRwDA6x9qqOn0RXxBo9pH16EO3SXPLR64cJum8B/RI/i8H6OkQDO1tEiE6UeceZk++U7fnD3c
 6i9Km85GTgQi6REsVZGIL/tZNIzN//qPwi7cDo3Cf/xmPrIKQhHJaxCqmbjGDmC8AXOaqNfWotVX
-Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_92489c42-441f-418d-8072-12732a842d5b" Target="#_29b43311-8452-40c4-904b-4640d39f3aaf"><Timestamp>2019-11-22 05:37:03</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+Wy2dcglW62PDszE/HKh9</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_5acf4abe-7bac-4948-86e0-1302db7d7ab3" Target="#_5305c27d-2671-4de2-acfd-e72f3efb3df4"><Timestamp>2019-11-22 05:37:59</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
